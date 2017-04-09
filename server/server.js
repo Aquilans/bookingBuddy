@@ -8,12 +8,12 @@ var validator = require('validator');
 var port = process.env.PORT || 3000;
 
 
-var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/test1';
-var client = new pg.Client(connectionString);
+// var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/test1';
+// var client = new pg.Client(connectionString);
 
-client.connect(function (err) {
-  if (err) throw err;
-});
+// client.connect(function (err) {
+//   if (err) throw err;
+// });
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../client')));
@@ -155,7 +155,7 @@ var tripUser = function(obj) {
   //SELECT * FROM trips; <--- in postgres, this will show your trip id
                       // res.send(err)
                     }
-                 
+
 
   client.query("INSERT INTO \
                   dates(beging, ending, duration, trip_id) \

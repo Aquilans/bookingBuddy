@@ -1,6 +1,6 @@
-import React, { PropTypes as T } from 'react';
-import { Jumbotron } from 'react-bootstrap';
-import styles from './styles.module.css';
+import React, { PropTypes as T } from 'react'
+import { Jumbotron } from 'react-bootstrap'
+import styles from './styles.module.css'
 
 export class Container extends React.Component {
   render() {
@@ -8,7 +8,7 @@ export class Container extends React.Component {
     if (this.props.children) {
       children = React.cloneElement(this.props.children, {
         auth: this.props.route.auth //sends auth instance from route to children
-      });
+      })
     }
 
     return (
@@ -18,7 +18,7 @@ export class Container extends React.Component {
         </h2>
         {children}
       </Jumbotron>
-    );
+    )
   }
 }
 

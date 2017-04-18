@@ -23,5 +23,3 @@ module.exports.hotwirePostRequest = function(req, res, next) {
   });
 };
 
-
-

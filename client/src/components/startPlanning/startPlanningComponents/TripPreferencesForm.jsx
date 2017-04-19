@@ -1,11 +1,11 @@
 var React, { Component } = require('react');
-import {tripData} from './tripRoom/tripRoomDynamicData';
+import {tripData} from '../../tripRoom/data/tripRoomDynamicData';
 import {
   BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom';
-import {worldCities} from '../../../worldcities.js'
+import {worldCities} from '../../../../../worldcities.js'
 //import nouislider.css from '../../../node-modules/materialize-css/extras/noUiSlider/'
 //import nouislider.min.js from '../../../node-modules/materialize-css/extras/noUiSlider/'
 
@@ -191,7 +191,6 @@ class TripPreferencesForm extends Component {
                     <input type="date" className="datepicker" placeholder="Select an end date:"></input>
                   </div>
                 </div>
-
             </li>
           </ul>
         </div>

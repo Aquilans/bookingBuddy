@@ -64,6 +64,3 @@ module.exports.hotwirePostRequest = function(req, res, next) {
     res.send(JSON.parse(body));
   });
 };
-
-
-

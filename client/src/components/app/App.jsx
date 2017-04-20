@@ -23,6 +23,9 @@ import PostRegistration from '../authentication/PostRegistration.jsx';
 // Auth
 import AuthService from '../../auth/AuthService';
 
+var clientId = process.env.AUTH0_CLIENT_ID || AUTH0_CLIENT_ID;
+var domain = process.env.AUTH0_DOMAIN || AUTH0_DOMAIN;
+
 class App extends Component {
 
   constructor (props) {
@@ -33,7 +36,7 @@ class App extends Component {
       profile: {}
     };
 
-    this.auth = new AuthService(AUTH0_CLIENT_ID, AUTH0_DOMAIN);
+    this.auth = new AuthService(clientId, domain);
 
     this.auth.on('profile_updated', (newProfile) => {
       this.setState({

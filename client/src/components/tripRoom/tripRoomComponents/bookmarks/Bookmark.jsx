@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import BuddyVotesWindow from './BuddyVotesWindow.jsx';
 import BookmarkComments from './BookmarkComments.jsx';
 
-// TripRoom > TripRoomComponents > TripBookmarksList > You Are Here (Bookmark)
+// TripRoom > TripBookmarksList > You Are Here (Bookmark)
 //bookmark object passed in as props
 
 // bookmark = {
@@ -23,6 +23,14 @@ import BookmarkComments from './BookmarkComments.jsx';
 //     buddyVote: -1
 //   }]
 // }
+
+
+var convertToFullImageUrl = function(thumbNailUrl){
+  var fullImageUrl = 'http://media.expedia.com';
+  fullImageUrl += thumbNailUrl;
+  fullImageUrl = fullImageUrl.slice(0, fullImageUrl.length - 5) + 'b' + fullImageUrl.slice( fullImageUrl.length - 4);
+  return fullImageUrl;
+};
 
 
 
@@ -76,20 +84,18 @@ class Bookmark extends Component {
     return (
       <li className="collection-item trip-bookmark">
         <div className="row bookmark-main">
-          <div className="col s12 l6">
+          <div className="row">
+            <h5>{this.state.hotelName}</h5>
+          </div>
+          <div className="col s12 l5">
             <div className="row">
-              <h5>{this.state.hotelName}</h5>
+              <img src={convertToFullImageUrl(this.state.image)} style={{'maxHeight':'300px', 'maxWidth':'100%'}} alt="picture"/>
             </div>
             <div className="row">
-              <div className="col s3">
-                <img src={'http://media.expedia.com' + this.state.image} style={{'maxHeight':'300px', 'maxWidth':'100%'}} alt="picture"/>
-              </div>
-              <div className="s9">
                 <p>{this.props.bookmark.bookmarkerNote}</p>
-              </div>
             </div>
           </div>
-          <div className="col s12 l6">
+          <div className="col s12 l7">
             <BuddyVotesWindow
               bookmarkID={this.props.bookmark.bookmarkID}
               buddyVotes={this.props.bookmark.buddyVotes}

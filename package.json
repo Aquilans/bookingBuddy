@@ -30,7 +30,7 @@
     "express": "^4.15.2",
     "hotwire": "0.0.1",
     "jest": "^19.0.2",
-    "jquery": "^3.2.1",
+    "jquery": "^3.5.0",
     "jwt-decode": "^2.2.0",
     "material-ui": "^0.17.3",
     "materialize-css": "^0.98.1",
